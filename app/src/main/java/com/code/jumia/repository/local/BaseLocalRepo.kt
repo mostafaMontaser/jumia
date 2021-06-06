@@ -13,7 +13,7 @@ open class BaseLocalRepo {
         val cachedObject: Any? = entry?.obj
         return if (cachedObject != null) {
             val cachedObject: Any? =
-                ParsingHelper.getGson().toJson(cachedObject).convertToModel(type)
+                ParsingHelper.gson.toJson(cachedObject).convertToModel(type)
             cachedObject
         } else null
     }
